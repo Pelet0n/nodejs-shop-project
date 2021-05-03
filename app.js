@@ -2,8 +2,6 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const expressLayouts = require('express-ejs-layouts')
 const passport = require('passport')
-const JwtStrategy = require('passport-jwt').Strategy
-const ExtractJwt = require('passport-jwt').ExtractJwt
 const LocalStrategy = require('passport-local').Strategy
 const session = require('express-session')
 const methodOverride = require('method-override')
@@ -15,6 +13,13 @@ const User = require('./schema/User')
 const cors = require('cors')
 const flash = require('connect-flash')
 
+
+if(process.env.NODE_ENV === 'production'){
+    console.log(`Server started in ${process.env.NODE_ENV} mode`)
+}
+else{
+    console.log(`Server started in ${process.env.NODE_ENV} mode`)
+}
 
 require('dotenv').config()
 
