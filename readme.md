@@ -1,0 +1,1 @@
+Wriiten in javascript shop project
