@@ -1,0 +1,112 @@
+body{
+    margin:0;
+    padding: 0;
+    background-color: darkslategrey;
+    background-image: url('./photos/pexels-pixabay-531880.jpg');
+    background-size: cover;
+    
+}
+
+.form-login{
+    margin-left: auto;
+    margin-right: auto;
+    width: 49%;
+    height: 400px;
+    text-align: center;
+    float:left;
+    text-align: center;
+}
+
+    
+.input{
+    background-color:inherit;
+    border:none;
+    border:2px black solid;
+    border-radius: 15px;
+    font-size:20px;
+    transition: 300ms;
+    
+}
+
+.input:focus{
+    font-size:150%;
+}
+h1{
+    font-family: 'Potta One', cursive;
+}
+
+
+
+.submit{
+    border:1px solid yellow;
+    border-radius: 20px;
+    padding:8px;
+    width:220px;
+    font-size:20px;
+    background-color:inherit;
+    color:rgb(8, 11, 14);
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.submit:hover{
+    width:250px;
+}
+
+.container{
+    padding:10px;
+}
+
+.login{
+    text-align: center;
+}
+
+.header{
+    background-color: burlywood;
+    width: 100%;
+    height: 30px;
+}
+.header th{
+    border-right: 1px black solid;
+    color:black;
+    width: 450px;
+}
+
+.header th a{
+    color:black ;
+}
+
+.zamowienia{
+    background-color: white;
+    height:300px;
+    width: 100%;
+    margin-top: 20px;
+
+}
+
+.konto table{
+    width: 600px;
+}
+
+textarea{
+    resize: none;
+}
+
+.box{
+    background-color:coral;
+    width:300px;
+    min-height: 400px;
+    float:left;
+    margin:10px;
+}
+
+#link-box{
+    text-align: center;
+    border: 1px solid black;
+    padding:8px;
+}
+
+img{
+    width:100%;
+    height: 200px;
+}

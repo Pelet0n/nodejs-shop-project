@@ -1,0 +1,30 @@
+<%- include('headers/header') %>
+
+<div class="row">
+    <% ogloszenie.forEach(e => { %>
+    <div class="col-md-4">
+        <div class="card text-white bg-dark mb-4 border-success">
+
+            <img src='photos/<%= e.zdjecie %>' alt="Zdjęcie ogłoszenia" class="card-img-top">
+            <div class="card-body">
+                <p class="card-title"><%= e.produkt %></p>
+                <p class="card-text">Cena: <%= e.cena %>zł</p>
+                <p class="card-text text-truncate">
+                    <%= e.opis %>
+                </p>
+                <p class="card-text">Użytkownika: <%= e.uzytkownik %></p>
+                <div class="row mb-5">
+                    <a href="/ogloszenie/<%= e._id  %>" class="btn btn-primary col-6">Zobacz więcej</a>
+                    <% if (name === e.uzytkownik) { %>
+                    <a href="/ogloszenie/edit/<%= e._id %>" class="btn btn-secondary col-6">Edytuj</a>
+                    <% } %>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <% }) %>
+
+
+
+</div>

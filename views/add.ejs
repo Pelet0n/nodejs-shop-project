@@ -1,0 +1,57 @@
+<%- include('headers/header') %>
+
+<div class="row">
+    <form action="/adding" method="POST" enctype="multipart/form-data" class="col-md-8">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="col-4 mb-3">
+            <label class="form-label">Co sprzedajesz?</label>
+            <input type="text" name="nazwa" class="js form-control col-7" required>         
+        </div>
+
+        <label class="form-label">Za ile?</label>   
+    <div class="col-sm-2">
+        <div class="input-group mb-3">
+            <input type="text" name="cena" class="js form-control" id="check-value" required>
+            <span class="input-group-text">zł</span>   
+        </div>
+        <span style="color:red;" id="text-warning"></span>
+    </div>
+        
+        
+        <div class="col-8 mb-2">
+            <label for="" class="form-label">Dodaj opis:</label>
+            <textarea name="opis" class="js form-control" cols="50" rows="10" required></textarea><br><br>
+        </div>
+        
+        <div class="col mb-3">
+        <% if (errFile.length > 0) { %>
+            <div class="alert alert-danger col-sm-5" role="alert">
+                <%= errFile %>
+            </div>
+        <% } %>     
+            <label for="" class="form-label">Wstaw zdjęcie</label>
+            <input type="file" name="zdjecie" class="form-control">
+        </div>
+
+        <button type="button" class="btn btn-primary" id="button" data-bs-toggle="modal" data-bs-target="#firstModal">Dodaj ogłoszenie</button>
+        <div class="modal fade" id="firstModal" aria-labelledby="firstModalLabel" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                            <h1>Czy aby napewno?</h1>
+                            <button class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Czy napewno chcesz dodać ogłoszenie?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+                            <input type="submit" class="btn btn-primary" value="Zaakceptuj">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,31 @@
+<%- include('headers/header') %>
+
+<div class="konto">
+   <p>Nazwa użytkownika: <%- user.nick %></p>
+   <p>Adres email: <%- user.email %></p>
+   <p>Historia zamówień:</p>
+   <table class="table bg-primary">
+      <thead>
+         <tr>
+            <th class="bg-success">Zamówienie</th>
+            <th>Cena</th>
+            <th>Status</th>
+            <th>Data kupna</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td>Komputer</td>
+            <td>3000zł</td>
+            <td>Dotarł na miejsce</td>
+            <td>10 02 2021</td>
+         </tr>
+         <tr>
+            <td>Monitor</td>
+            <td>500zł</td>
+            <td>W drodze</td>
+            <td>11 02 2021</td>
+         </tr>
+      </tbody>
+   </table>
+</div>

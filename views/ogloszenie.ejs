@@ -1,0 +1,35 @@
+<%- include('headers/header') %>
+
+<div class="row">
+    <div class="col-sm-3">
+        <div class="img-fluid">
+            <img src='/photos/<%= ogloszenie.zdjecie %>' alt="Zdjęcie ogłoszenia" class="rounded">
+        </div>
+        <h2>Cena: <%= ogloszenie.cena %>zł</h2>
+    </div>
+    <div class="col">
+        <h1 class="display-1"><%= ogloszenie.produkt %></h1>
+        <p><%= ogloszenie.opis %></p>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col">
+        <form action="/payment/<%= ogloszenie._id %>" method="POST" class="float-start">
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_51I5qjZLLbWkK6zLy270lDoicU8Q3jGZMwlZ38gIHxIpAj2DDS6RaH5jo9Iw01DakX0y0UpuXJNI1o0hzxf0eLauY00qVOudRMW"
+                data-amount="<%= ogloszenie.cena * 100 %>" data-name="<%= ogloszenie.produkt %>" data-description="<%= ogloszenie.opis %>"
+                data-zip-code="true"
+                data-image="https://lh3.googleusercontent.com/-bHKPCBcm7VU/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuckG1coNzB2_YExjdsddgVsl9kFfQg/s96-c/photo.jpg"
+                data-locale="auto">
+            </script>
+            <script>
+                document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+            </script>
+            <button type="submit" class="btn btn-primary col-lg-12">Kup teraz</button>
+        </form>
+
+        <input type="button" value="Wróć" class="btn btn-secondary" id='go-back'>
+    </div>
+</div>

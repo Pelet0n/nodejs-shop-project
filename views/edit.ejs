@@ -1,0 +1,48 @@
+<%- include('headers/header') %>
+
+<div class="row">
+    <form action="/ogloszenie/edit/<%= ogloszenie._id %>" method="POST" enctype="multipart/form-data" class="col sm15">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="col-4 mb-3">
+            <label class="form-label">Co sprzedajesz?</label>
+            <input type="text" name="nazwa" class="js form-control col-7" value='<%= ogloszenie.produkt  %> ' required>         
+        </div>
+        
+        <div class="col-4 mb-3">
+            <label class="form-label">Za ile?</label>
+            <input type="number" name="cena" class="js form-control" value='<%= ogloszenie.cena %>' required>
+            
+        </div>
+        
+        <div class="col-8 mb-2">
+            <label for="" class="form-label">Dodaj opis:</label>
+            <textarea name="opis" class="js form-control" cols="50" rows="10" required><%= ogloszenie.opis %></textarea><br><br>
+        </div>
+        
+        <div class="col mb-3">
+            <label for="" class="form-label">Wstaw zdjęcie</label>
+            <input type="file" name="zdjecie" class="form-control">
+        </div>
+
+        <button type="button" class="btn btn-primary" id="button" data-bs-toggle="modal" data-bs-target="#firstModal">Edytuj ogłoszenie</button>
+        <div class="modal fade" id="firstModal" aria-labelledby="firstModalLabel" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                            <h1>Czy aby napewno?</h1>
+                            <button class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Czy napewno chcesz edytować ogłoszenie?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+                            <input type="submit" class="btn btn-primary" value="Zaakceptuj">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+

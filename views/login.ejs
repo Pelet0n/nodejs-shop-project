@@ -1,0 +1,59 @@
+
+<div class="form-login login">
+    <h1>Logowanie</h1>
+    <% if (error_log.length > 0) { %>
+        <div class="alert alert-danger col-12" role="alert">
+         
+                <%= error_log %>
+           
+        </div>
+        <% } %>
+    <form action="/login" method="post">
+        <div class="form-floating mb-3 col-11" style="float:left;">
+            <input type="text" name="nick" placeholder="nick" required class="form-control" autocomplete="off">
+            <label for="latajacyInput">nick</label>
+        </div>
+        
+        <div class="form-floating mb-3 col-11" style="float:left;"> 
+            <input type="password" name="password" placeholder="password" required class="form-control" autocomplete="off">
+            <label for="latajacyInput2">password</label>
+        </div>
+       
+        <input type="submit" value="Zaloguj się" class="btn btn-success col-8">
+    </form>
+   
+</div>
+
+
+
+<div class="form-login">
+    <h1>Rejestracja</h1>
+
+    <% if (error_reg.length > 0) { %>
+        <div class="alert alert-danger" role="alert">
+         
+                <%= error_reg %>
+           
+        </div>
+        <% } %>
+    <% if(success.length > 0) { %>
+        <div class="alert alert-success" role="alert">
+            <%= success %>
+        </div>
+    <% } %>
+    <form action="/register" method="post">
+        <input type="text" name="nick" placeholder="nick" required class="form-control md-3" autocomplete="off"><br><br>
+        <input type="password" name="password" placeholder="password" required class="form-control" autocomplete="off"><br><br>
+        <input type="password" name="password2" placeholder="check password" required class="form-control" autocomplete="off"><br><br>
+        <input type="email" name="email" placeholder="email" required class="form-control"><br><br>
+        <div class="form-check">
+            <input type="checkbox" name="check" class="form-check-input">
+            <label for="" class="form-check-label">
+                Akceptuję <a href="#">regulamin</a>
+            </label>
+        </div>
+        <input type="submit" value="Zarejestruj się" class="btn btn-success col-8"><br><br>
+    </form>
+</div>
+
+
